@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -18,7 +20,7 @@ namespace Lab3
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, INotifyPropertyChanged
     {
         public MainWindow()
         {
@@ -59,6 +61,7 @@ namespace Lab3
             menuItem.Content = hero.Name;
 
             HeroListView.Items.Add(menuItem);
+            NotifyPropertyChanged();
         }
 
         private void OnSelected(object sender, RoutedEventArgs e)
@@ -79,6 +82,7 @@ namespace Lab3
             {
                 return;
             }
+            
             HeroCharacteristics.Text = "Name: " + HeroList[GetItemIndex()].Name +
                 "\nHealth: " + HeroList[GetItemIndex()].Health +
                 "\nMovement speed: " + HeroList[GetItemIndex()].MovementSpeed +
@@ -89,7 +93,7 @@ namespace Lab3
                 "\nAttack range: " + HeroList[GetItemIndex()].AttackRange +
                 "\nBase attack time: " + HeroList[GetItemIndex()].BaseAttackTime +
                 "\nDamage: " + HeroList[GetItemIndex()].Damage;
-               
+            NotifyPropertyChanged();
         }
 
         private void OnSelectedIndexChanged(object sender, System.EventArgs e)
@@ -115,6 +119,14 @@ namespace Lab3
 
             HeroList.RemoveAt(Convert.ToInt32(ItemToBeDeletedTextBox.Text));
             HeroListView.Items.RemoveAt(Convert.ToInt32(ItemToBeDeletedTextBox.Text));
+            NotifyPropertyChanged();
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
