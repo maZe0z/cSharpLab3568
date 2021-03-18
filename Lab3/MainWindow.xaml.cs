@@ -22,7 +22,7 @@ namespace Lab3
     {
         public MainWindow()
         {
-            InitializeComponent();
+            //InitializeComponent();
         }
 
         private bool isLoaded;
@@ -98,6 +98,23 @@ namespace Lab3
             {
                 ShowCharacteristics();
             }
+        }
+
+        private void ItemToBeDeletedTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void RemoveButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (ItemToBeDeletedTextBox.Text == " " || ItemToBeDeletedTextBox.Text == null ||
+                ItemToBeDeletedTextBox.Text == "" || GetItemIndex() == -1)
+            {
+                return;
+            }
+
+            HeroList.RemoveAt(Convert.ToInt32(ItemToBeDeletedTextBox.Text));
+            HeroListView.Items.RemoveAt(Convert.ToInt32(ItemToBeDeletedTextBox.Text));
         }
     }
 }

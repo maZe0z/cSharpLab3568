@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Lab3"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Dota 3" Height="459.887" Width="687.145" Icon="img.png">
+        Title="Dota 3" Height="471.887" Width="865.145" Icon="img.png">
     <Window.Background>
         <ImageBrush ImageSource="background.jpg"/>
     </Window.Background>
@@ -28,21 +28,26 @@
         <TextBox x:Name="AttackRange" HorizontalAlignment="Left" Height="24" Margin="127,277,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="BaseAttackTime" HorizontalAlignment="Left" Height="24" Margin="127,305,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="Damage" HorizontalAlignment="Left" Height="24" Margin="127,333,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120"/>
-        <Label Content="In order to add a hero to the database&#xD;&#xA; enter the following information:" HorizontalAlignment="Left" Margin="32,31,0,0" VerticalAlignment="Top" Height="50" Width="215"/>
-        <Label x:Name="lbl" Content="Name" HorizontalAlignment="Left" Margin="19,81,0,0" VerticalAlignment="Top" Width="103" Height="26"/>
-        <Label Content="Health" HorizontalAlignment="Left" Margin="19,109,0,0" VerticalAlignment="Top" Width="103" Height="26"/>
-        <Label Content="Movement speed" HorizontalAlignment="Left" Margin="19,137,0,0" VerticalAlignment="Top" Width="103" RenderTransformOrigin="0.709,3.577" Height="26"/>
-        <Label Content="Turn rate" HorizontalAlignment="Left" Margin="19,165,0,0" VerticalAlignment="Top" Width="103" Height="26"/>
-        <Label Content="Night vision" HorizontalAlignment="Left" Margin="19,193,0,0" VerticalAlignment="Top" Width="103" Height="26"/>
-        <Label Content="Armor" HorizontalAlignment="Left" Margin="19,221,0,0" VerticalAlignment="Top" Width="103" Height="26"/>
-        <Label Content="Magic resistance" HorizontalAlignment="Left" Margin="19,249,0,0" VerticalAlignment="Top" Width="103" Height="26"/>
-        <Label Content="Attack range" HorizontalAlignment="Left" Margin="19,277,0,0" VerticalAlignment="Top" Width="103" RenderTransformOrigin="0.709,3.577" Height="26"/>
-        <Label Content="Base attack time" HorizontalAlignment="Left" Margin="19,305,0,0" VerticalAlignment="Top" Width="103" Height="26"/>
-        <Label Content="Damage" HorizontalAlignment="Left" Margin="19,333,0,0" VerticalAlignment="Top" Width="103" Height="26"/>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="89,374,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Height="20"/>
-        <ListBox x:Name="HeroListView" HorizontalAlignment="Left" Height="276" Margin="284,81,0,0" VerticalAlignment="Top" Width="115"/>
-        <TextBox x:Name="HeroCharacteristics" HorizontalAlignment="Left" Height="276" Margin="444,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" IsReadOnly="True"/>
-        <Label Content="Hero list:" HorizontalAlignment="Left" Margin="312,50,0,0" VerticalAlignment="Top" Height="26" Width="57"/>
-        <Label Content="Hero's characteristics:" HorizontalAlignment="Left" Margin="487,50,0,0" VerticalAlignment="Top" Width="149" Height="26"/>
+        <Label Content="In order to add a hero to the database&#xD;&#xA; enter the following information:" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top" Height="50" Width="334" Foreground="White" FontFamily="Global Monospace"/>
+        <Label x:Name="lbl" Content="Name" HorizontalAlignment="Left" Margin="0,81,0,0" VerticalAlignment="Top" Width="103" Height="26" Foreground="White" FontFamily="Global Monospace"/>
+        <Label Content="Health" HorizontalAlignment="Left" Margin="0,107,0,0" VerticalAlignment="Top" Width="103" Height="26" Foreground="White" FontFamily="Global Monospace"/>
+        <Label Content="Movement speed" HorizontalAlignment="Left" Margin="0,137,0,0" VerticalAlignment="Top" Width="112" RenderTransformOrigin="0.709,3.577" Height="26" FontFamily="Global Monospace" Foreground="White"/>
+        <Label Content="Turn rate" HorizontalAlignment="Left" Margin="0,163,0,0" VerticalAlignment="Top" Width="103" Height="26" Foreground="White" FontFamily="Global Monospace"/>
+        <Label Content="Night vision" HorizontalAlignment="Left" Margin="0,191,0,0" VerticalAlignment="Top" Width="103" Height="26" Foreground="White" FontFamily="Global Monospace"/>
+        <Label Content="Armor" HorizontalAlignment="Left" Margin="0,219,0,0" VerticalAlignment="Top" Width="103" Height="26" Foreground="White" FontFamily="Global Monospace"/>
+        <Label Content="Magic resistance" HorizontalAlignment="Left" Margin="0,249,0,0" VerticalAlignment="Top" Width="129" Height="26" FontFamily="Global Monospace" Foreground="White"/>
+        <Label Content="Attack range" HorizontalAlignment="Left" Margin="0,277,0,0" VerticalAlignment="Top" Width="103" RenderTransformOrigin="0.709,3.577" Height="26" FontFamily="Global Monospace" Foreground="White"/>
+        <Label Content="Base attack time" HorizontalAlignment="Left" Margin="0,305,0,0" VerticalAlignment="Top" Width="127" Height="26" Foreground="White" FontFamily="Global Monospace"/>
+        <Label Content="Damage" HorizontalAlignment="Left" Margin="0,333,0,0" VerticalAlignment="Top" Width="103" Height="26" Foreground="White" FontFamily="Global Monospace"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="89,374,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Height="20" FontFamily="Global Monospace" FontSize="14"/>
+        <ListBox x:Name="HeroListView" HorizontalAlignment="Left" Height="276" Margin="271,80,0,0" VerticalAlignment="Top" Width="115"/>
+        <TextBox x:Name="HeroCharacteristics" HorizontalAlignment="Left" Height="276" Margin="408,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" IsReadOnly="True"/>
+        <Label Content="Hero list:" HorizontalAlignment="Left" Margin="271,49,0,0" VerticalAlignment="Top" Height="26" Width="115" Foreground="White" FontFamily="Global Monospace" FontSize="14"/>
+        <Label Content="Hero's characteristics:" HorizontalAlignment="Left" Margin="408,49,0,0" VerticalAlignment="Top" Width="212" Height="26" Foreground="White" FontFamily="Global Monospace" FontSize="14"/>
+        <Button x:Name="RemoveButton" Content="Remove" HorizontalAlignment="Left" Margin="750,91,0,0" VerticalAlignment="Top" Width="58" FontFamily="Global Monospace" FontSize="13" RenderTransformOrigin="0.483,-5.55" Background="#FF5B2525" Foreground="White" Click="RemoveButton_Click"/>
+        <Label Content="Remove a hero&#xD;&#xA;at a specified index" HorizontalAlignment="Center" Margin="677,49,24,0" VerticalAlignment="Top" FontFamily="Global Monospace" Foreground="White" BorderThickness="0" BorderBrush="Black" Height="41" Width="158"/>
+        <Border BorderBrush="#FF722D13" BorderThickness="3" HorizontalAlignment="Left" Height="73" Margin="667,49,0,0" VerticalAlignment="Top" Width="168">
+            <TextBox x:Name="ItemToBeDeletedTextBox" TextWrapping="Wrap" Text=" &#xD;&#xA;" Margin="42,39,92,7" Background="#FF5B2525" Foreground="White" FontFamily="Global Monospace" RenderTransformOrigin="2.133,0.333" BorderBrush="#FF707070"/>
+        </Border>
     </Grid>
 </Window>
