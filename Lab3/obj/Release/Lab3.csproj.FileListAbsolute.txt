@@ -1,0 +1,15 @@
+E:\Lab3\Lab3\bin\Release\Lab3.exe.config
+E:\Lab3\Lab3\bin\Release\Lab3.exe
+E:\Lab3\Lab3\bin\Release\Lab3.pdb
+E:\Lab3\Lab3\obj\Release\Lab3.csprojAssemblyReference.cache
+E:\Lab3\Lab3\obj\Release\MainWindow.g.cs
+E:\Lab3\Lab3\obj\Release\App.g.cs
+E:\Lab3\Lab3\obj\Release\Lab3_MarkupCompile.cache
+E:\Lab3\Lab3\obj\Release\Lab3_MarkupCompile.lref
+E:\Lab3\Lab3\obj\Release\MainWindow.baml
+E:\Lab3\Lab3\obj\Release\Lab3.g.resources
+E:\Lab3\Lab3\obj\Release\Lab3.Properties.Resources.resources
+E:\Lab3\Lab3\obj\Release\Lab3.csproj.GenerateResource.cache
+E:\Lab3\Lab3\obj\Release\Lab3.csproj.CoreCompileInputs.cache
+E:\Lab3\Lab3\obj\Release\Lab3.exe
+E:\Lab3\Lab3\obj\Release\Lab3.pdb

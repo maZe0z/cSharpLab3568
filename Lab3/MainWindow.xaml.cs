@@ -25,6 +25,14 @@ namespace Lab3
             InitializeComponent();
         }
 
+        private bool isLoaded;
+
+        private void WindowLoaded(object sender, RoutedEventArgs e)
+        {
+            if (isLoaded) return;
+            isLoaded = true;
+        }
+
         public List<Hero> HeroList = new List<Hero>();
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -47,6 +55,7 @@ namespace Lab3
             HeroList.Add(hero);
 
             ListBoxItem menuItem = new ListBoxItem();
+            menuItem.Selected += OnSelectedIndexChanged;
             menuItem.Content = hero.Name;
 
             HeroListView.Items.Add(menuItem);
@@ -54,7 +63,41 @@ namespace Lab3
 
         private void OnSelected(object sender, RoutedEventArgs e)
         {
-            //
+            ListBoxItem item = sender as ListBoxItem;
+            HeroCharacteristics.Text = Convert.ToString(GetItemIndex());
+        }
+
+        private int GetItemIndex()
+        {
+            int selectedIndex = HeroListView.SelectedIndex;
+            return selectedIndex;
+        }
+
+        private void ShowCharacteristics()
+        {
+            if (GetItemIndex() == -1)
+            {
+                return;
+            }
+            HeroCharacteristics.Text = "Name: " + HeroList[GetItemIndex()].Name +
+                "\nHealth: " + HeroList[GetItemIndex()].Health +
+                "\nMovement speed: " + HeroList[GetItemIndex()].MovementSpeed +
+                "\nTurn rate: " + HeroList[GetItemIndex()].TurnRate +
+                "\nNight vision: " + HeroList[GetItemIndex()].NightVision +
+                "\nArmor: " + HeroList[GetItemIndex()].Armor +
+                "\nMagic resistance: " + HeroList[GetItemIndex()].MagicResistance +
+                "\nAttack range: " + HeroList[GetItemIndex()].AttackRange +
+                "\nBase attack time: " + HeroList[GetItemIndex()].BaseAttackTime +
+                "\nDamage: " + HeroList[GetItemIndex()].Damage;
+               
+        }
+
+        private void OnSelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            if (!isLoaded)
+            {
+                ShowCharacteristics();
+            }
         }
     }
 }

@@ -31,16 +31,16 @@ namespace Lab3
             double turnRate, int nightVision, double armor,
             int magicResistance, int attackRange, double baseAttackTime, int damage)
         {
-            this.Name = name;
-            this.Health = health;
-            this.MovementSpeed = movementSpeed;
-            this.TurnRate = turnRate;
-            this.NightVision = nightVision;
-            this.Armor = armor;
-            this.MagicResistance = magicResistance;
-            this.AttackRange = attackRange;
-            this.BaseAttackTime = baseAttackTime;
-            this.Damage = damage;
+            Name = name;
+            Health = health;
+            MovementSpeed = movementSpeed;
+            TurnRate = turnRate;
+            NightVision = nightVision;
+            Armor = armor;
+            MagicResistance = magicResistance;
+            AttackRange = attackRange;
+            BaseAttackTime = baseAttackTime;
+            Damage = damage;
         }
     }
 }
