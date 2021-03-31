@@ -42,5 +42,17 @@ namespace Lab3
             BaseAttackTime = baseAttackTime;
             Damage = damage;
         }
+
+        public void Attack(List<Hero> heroList, int attackerIndex, int attackedIndex)
+        {
+            if (heroList[attackedIndex].Health - heroList[attackerIndex].Damage < 0)
+            {
+                heroList[attackedIndex].Health = 0;
+            }
+            else
+            {
+                heroList[attackedIndex].Health = heroList[attackedIndex].Health - heroList[attackerIndex].Damage;
+            }
+        }
     }
 }

@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:Lab3"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Dota 3" Height="471.887" Width="865.145" Icon="img.png">
+        Title="Dota 3" Height="508.887" Width="858.145" Icon="img.png">
     <Window.Background>
         <ImageBrush ImageSource="background.jpg"/>
     </Window.Background>
-    <Grid x:Name="Grid">
+    <Grid x:Name="Grid" Margin="0,0,4,-2">
         <Grid.Background>
             <ImageBrush ImageSource="background.jpg"/>
         </Grid.Background>
@@ -44,10 +44,10 @@
         <TextBox x:Name="HeroCharacteristics" HorizontalAlignment="Left" Height="276" Margin="408,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" IsReadOnly="True"/>
         <Label Content="Hero list:" HorizontalAlignment="Left" Margin="271,49,0,0" VerticalAlignment="Top" Height="26" Width="115" Foreground="White" FontFamily="Global Monospace" FontSize="14"/>
         <Label Content="Hero's characteristics:" HorizontalAlignment="Left" Margin="408,49,0,0" VerticalAlignment="Top" Width="212" Height="26" Foreground="White" FontFamily="Global Monospace" FontSize="14"/>
-        <Button x:Name="RemoveButton" Content="Remove" HorizontalAlignment="Left" Margin="750,91,0,0" VerticalAlignment="Top" Width="58" FontFamily="Global Monospace" FontSize="13" RenderTransformOrigin="0.483,-5.55" Background="#FF5B2525" Foreground="White" Click="RemoveButton_Click"/>
-        <Label Content="Remove a hero&#xD;&#xA;at a specified index" HorizontalAlignment="Center" Margin="677,49,24,0" VerticalAlignment="Top" FontFamily="Global Monospace" Foreground="White" BorderThickness="0" BorderBrush="Black" Height="41" Width="158"/>
-        <Border BorderBrush="#FF722D13" BorderThickness="3" HorizontalAlignment="Left" Height="73" Margin="667,49,0,0" VerticalAlignment="Top" Width="168">
-            <TextBox x:Name="ItemToBeDeletedTextBox" TextWrapping="Wrap" Text=" &#xD;&#xA;" Margin="42,39,92,7" Background="#FF5B2525" Foreground="White" FontFamily="Global Monospace" RenderTransformOrigin="2.133,0.333" BorderBrush="#FF707070"/>
-        </Border>
+        <Button Content="Show" HorizontalAlignment="Left" Margin="477,373,0,0" VerticalAlignment="Top" Width="75" Height="21" FontFamily="Global Monospace" FontSize="14" Click="Button_Click_1" RenderTransformOrigin="0.52,-1.619"/>
+        <TextBox x:Name="AttackedHeroTextBox" HorizontalAlignment="Left" Height="23" Margin="746,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="27" RenderTransformOrigin="0.519,0.565"/>
+        <TextBox x:Name="AttackingHeroTextBox" HorizontalAlignment="Left" Height="23" Margin="702,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="27"/>
+        <Button x:Name="AttackButton" Content="Attack!" HorizontalAlignment="Left" Margin="702,146,0,0" VerticalAlignment="Top" Width="71" FontFamily="Global Monospace" FontSize="14" Click="AttackButton_Click"/>
+        <Label Content="Enter attacking and &#xD;&#xA;attacked hero indexes:" HorizontalAlignment="Left" Margin="651,66,0,0" VerticalAlignment="Top" Width="197" Height="44" Foreground="White" FontFamily="Global Monospace" FontSize="14"/>
     </Grid>
 </Window>
