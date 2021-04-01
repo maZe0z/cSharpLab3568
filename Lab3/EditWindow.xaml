@@ -1,0 +1,34 @@
+﻿<Window x:Class="Lab3.EditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab3"
+        mc:Ignorable="d"
+        Title="EditWindow" Height="399.895" Width="228.046">
+    <Grid Margin="0,0,-8,0" Background="Black">
+        <Button Content="Change" HorizontalAlignment="Left" Margin="65,337,0,0" VerticalAlignment="Top" Width="75" FontFamily="Global Monospace" FontSize="14" Click="Button_Click"/>
+        <TextBox x:Name="NameTextBox" HorizontalAlignment="Left" Height="23" Margin="133,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
+        <Label Content="Chosen hero:" HorizontalAlignment="Left" Margin="51,10,0,0" VerticalAlignment="Top" Width="124" FontFamily="Global Monospace" FontSize="15" Background="Black" Foreground="White"/>
+        <TextBox x:Name="HealthTextBox" HorizontalAlignment="Left" Height="23" Margin="133,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="MvmntSpdBox" HorizontalAlignment="Left" Height="23" Margin="133,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="TurnRateBox" HorizontalAlignment="Left" Height="23" Margin="133,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="NightVisionBox" HorizontalAlignment="Left" Height="23" Margin="133,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="ArmorBox" HorizontalAlignment="Left" Height="23" Margin="133,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="ResistBox" HorizontalAlignment="Left" Height="23" Margin="133,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="RangeBox" HorizontalAlignment="Left" Height="23" Margin="133,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="AttackTimeBox" HorizontalAlignment="Left" Height="23" Margin="133,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="DamageBox" HorizontalAlignment="Left" Height="23" Margin="133,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="lbl" Content="Name" HorizontalAlignment="Left" Margin="0,45,0,0" VerticalAlignment="Top" Width="103" Height="26" Foreground="White" FontFamily="Global Monospace" Background="Black"/>
+        <Label Content="Health" HorizontalAlignment="Left" Margin="0,71,0,0" VerticalAlignment="Top" Width="103" Height="26" Foreground="White" FontFamily="Global Monospace" Background="Black"/>
+        <Label Content="Movement speed" HorizontalAlignment="Left" Margin="0,101,0,0" VerticalAlignment="Top" Width="112" RenderTransformOrigin="0.709,3.577" Height="26" FontFamily="Global Monospace" Foreground="White" Background="Black"/>
+        <Label Content="Turn rate" HorizontalAlignment="Left" Margin="0,127,0,0" VerticalAlignment="Top" Width="103" Height="26" Foreground="White" FontFamily="Global Monospace" Background="Black"/>
+        <Label Content="Night vision" HorizontalAlignment="Left" Margin="0,155,0,0" VerticalAlignment="Top" Width="103" Height="26" Foreground="White" FontFamily="Global Monospace" Background="Black"/>
+        <Label Content="Armor" HorizontalAlignment="Left" Margin="0,183,0,0" VerticalAlignment="Top" Width="103" Height="26" Foreground="White" FontFamily="Global Monospace" Background="Black"/>
+        <Label Content="Magic resistance" HorizontalAlignment="Left" Margin="0,213,0,0" VerticalAlignment="Top" Width="129" Height="26" FontFamily="Global Monospace" Foreground="White" Background="Black"/>
+        <Label Content="Attack range" HorizontalAlignment="Left" Margin="0,241,0,0" VerticalAlignment="Top" Width="103" RenderTransformOrigin="0.709,3.577" Height="26" FontFamily="Global Monospace" Foreground="White" Background="Black"/>
+        <Label Content="Base attack time" HorizontalAlignment="Left" Margin="0,269,0,0" VerticalAlignment="Top" Width="127" Height="26" Foreground="White" FontFamily="Global Monospace" Background="Black"/>
+        <Label Content="Damage" HorizontalAlignment="Left" Margin="0,297,0,0" VerticalAlignment="Top" Width="103" Height="26" Foreground="White" FontFamily="Global Monospace" Background="Black"/>
+
+    </Grid>
+</Window>

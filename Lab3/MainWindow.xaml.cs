@@ -137,9 +137,19 @@ namespace Lab3
             int attackerIndex = Convert.ToInt32(AttackingHeroTextBox.Text);
             int attackedIndex = Convert.ToInt32(AttackedHeroTextBox.Text);
 
-            Debug.Text = "Worked";
-
             HeroList[attackerIndex].Attack(HeroList, attackerIndex, attackedIndex);
+        }
+
+        private void EditModeButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (GetItemIndex() == -1)
+            {
+                return;
+            }
+
+            EditWindow editWindow = new EditWindow();
+            editWindow.Show();
+            editWindow.ShowInitialCharacteristics();
         }
     }
 }

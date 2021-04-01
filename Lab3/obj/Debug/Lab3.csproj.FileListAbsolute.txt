@@ -28,3 +28,5 @@ E:\Lab3\Lab3\obj\Debug\Lab3.g.resources
 E:\Lab3\Lab3\obj\Debug\Lab3.Properties.Resources.resources
 E:\Lab3\Lab3\obj\Debug\Lab3.csproj.GenerateResource.cache
 E:\Lab3\Lab3\obj\Debug\Lab3.csproj.CoreCompileInputs.cache
+D:\proga\2sem\C#\Lab3\Lab3\obj\Debug\EditWindow.g.cs
+D:\proga\2sem\C#\Lab3\Lab3\obj\Debug\EditWindow.baml

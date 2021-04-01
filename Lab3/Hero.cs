@@ -8,6 +8,7 @@ namespace Lab3
 {
     public class Hero
     {
+        private static string GenerationId() => Guid.NewGuid().ToString();
         public string Name { get; set; }
         public int Health { get; set; }
 
@@ -27,6 +28,8 @@ namespace Lab3
 
         public int Damage { get; set; }
 
+        public string Id { get; }
+        
         public Hero(string name, int health, int movementSpeed, 
             double turnRate, int nightVision, double armor,
             int magicResistance, int attackRange, double baseAttackTime, int damage)
@@ -41,8 +44,10 @@ namespace Lab3
             AttackRange = attackRange;
             BaseAttackTime = baseAttackTime;
             Damage = damage;
+            Id = GenerateId();
         }
 
+        private static string GenerateId() => Guid.NewGuid().ToString();
         public void Attack(List<Hero> heroList, int attackerIndex, int attackedIndex)
         {
             if (heroList[attackedIndex].Health - heroList[attackerIndex].Damage < 0)
