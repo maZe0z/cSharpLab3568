@@ -18,16 +18,16 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="Name" HorizontalAlignment="Left" Height="24" Margin="127,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text=" "/>
-        <TextBox x:Name="Health" HorizontalAlignment="Left" Height="22" Margin="127,109,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="MovementSpeed" HorizontalAlignment="Left" Height="24" Margin="127,137,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="TurnRate" HorizontalAlignment="Left" Height="24" Margin="127,165,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="NightVision" HorizontalAlignment="Left" Height="24" Margin="127,193,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Armor" HorizontalAlignment="Left" Height="24" Margin="127,221,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="MagicResistance" HorizontalAlignment="Left" Height="24" Margin="127,249,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="AttackRange" HorizontalAlignment="Left" Height="24" Margin="127,277,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="BaseAttackTime" HorizontalAlignment="Left" Height="24" Margin="127,305,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Damage" HorizontalAlignment="Left" Height="24" Margin="127,333,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Name" HorizontalAlignment="Left" Height="24" Margin="127,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Health" HorizontalAlignment="Left" Height="22" Margin="127,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="MovementSpeed" HorizontalAlignment="Left" Height="24" Margin="127,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TurnRate" HorizontalAlignment="Left" Height="24" Margin="127,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="NightVision" HorizontalAlignment="Left" Height="24" Margin="127,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Armor" HorizontalAlignment="Left" Height="24" Margin="127,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="MagicResistance" HorizontalAlignment="Left" Height="24" Margin="127,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="AttackRange" HorizontalAlignment="Left" Height="24" Margin="127,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="BaseAttackTime" HorizontalAlignment="Left" Height="24" Margin="127,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Damage" HorizontalAlignment="Left" Height="24" Margin="127,333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="In order to add a hero to the database&#xD;&#xA; enter the following information:" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top" Height="50" Width="334" Foreground="White" FontFamily="Global Monospace"/>
         <Label x:Name="lbl" Content="Name" HorizontalAlignment="Left" Margin="0,81,0,0" VerticalAlignment="Top" Width="103" Height="26" Foreground="White" FontFamily="Global Monospace"/>
         <Label Content="Health" HorizontalAlignment="Left" Margin="0,107,0,0" VerticalAlignment="Top" Width="103" Height="26" Foreground="White" FontFamily="Global Monospace"/>
@@ -51,5 +51,6 @@
         <Label Content="Enter attacking and &#xD;&#xA;attacked hero indexes:" HorizontalAlignment="Left" Margin="651,66,0,0" VerticalAlignment="Top" Width="197" Height="44" Foreground="White" FontFamily="Global Monospace" FontSize="14"/>
         <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="110" Margin="651,66,0,0" VerticalAlignment="Top" Width="187"/>
         <Button x:Name="EditModeButton" Content="Edit mode" HorizontalAlignment="Left" Margin="457,408,0,0" VerticalAlignment="Top" Width="119" FontFamily="Global Monospace" Click="EditModeButton_Click"/>
+        <ProgressBar x:Name="Progressbar" HorizontalAlignment="Left" Height="10" Margin="651,207,0,0" VerticalAlignment="Top" Width="187"/>
     </Grid>
 </Window>

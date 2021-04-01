@@ -44,6 +44,23 @@ namespace Lab3
             Id = GenerateId();
         }
 
+        public Hero(string name, int health, int movementSpeed,
+            double turnRate, int nightVision, double armor,
+            int magicResistance, int attackRange, double baseAttackTime, int damage, string id)
+        {
+            Name = name;
+            Health = health;
+            MovementSpeed = movementSpeed;
+            TurnRate = turnRate;
+            NightVision = nightVision;
+            Armor = armor;
+            MagicResistance = magicResistance;
+            AttackRange = attackRange;
+            BaseAttackTime = baseAttackTime;
+            Damage = damage;
+            Id = id;
+        }
+
         private static string GenerateId() => Guid.NewGuid().ToString();
         public void Attack(List<Hero> heroList, int attackerIndex, int attackedIndex)
         {

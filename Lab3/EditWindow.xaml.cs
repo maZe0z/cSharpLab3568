@@ -6,7 +6,7 @@ namespace Lab3
     /// <summary>
     /// Interaction logic for EditWindow.xaml
     /// </summary>
-    public partial class EditWindow : Window
+    public partial class EditWindow
     {
         public EditWindow()
         {

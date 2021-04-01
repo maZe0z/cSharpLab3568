@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -10,19 +11,27 @@ namespace Lab3
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, INotifyPropertyChanged
+    public partial class MainWindow : INotifyPropertyChanged
     {
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private bool isLoaded;
-
         public List<Hero> HeroList = new List<Hero>();
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (String.IsNullOrEmpty(Name.Text) || String.IsNullOrEmpty(Health.Text) ||
+                String.IsNullOrEmpty(TurnRate.Text) || String.IsNullOrEmpty(Name.Text) ||
+                String.IsNullOrEmpty(NightVision.Text) || String.IsNullOrEmpty(Armor.Text) ||
+                String.IsNullOrEmpty(MagicResistance.Text) || String.IsNullOrEmpty(AttackRange.Text) ||
+                String.IsNullOrEmpty(BaseAttackTime.Text) || String.IsNullOrEmpty(Damage.Text))
+            {
+                MessageBox.Show("The stats have incorrect format or not all stats are filled in!");
+                return;
+            }
+
             string name = Name.Text;
             int health = Convert.ToInt32(Health.Text);
             int movementSpeed = Convert.ToInt32(MovementSpeed.Text);
@@ -123,6 +132,12 @@ namespace Lab3
             {
                 return;
             }*/
+
+            for (int i = 0; i < 100; i++)
+            {
+                (sender as BackgroundWorker).ReportProgress(i);
+                Thread.Sleep(100);
+            }
 
             int attackerIndex = Convert.ToInt32(AttackingHeroTextBox.Text);
             int attackedIndex = Convert.ToInt32(AttackedHeroTextBox.Text);
