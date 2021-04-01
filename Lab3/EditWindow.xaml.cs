@@ -1,16 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Lab3
 {
@@ -26,7 +15,7 @@ namespace Lab3
 
         private int GetItemIndex()
         {
-            int selectedIndex = ((MainWindow) System.Windows.Application.Current.MainWindow).HeroListView.SelectedIndex;
+            int selectedIndex = ((MainWindow) Application.Current.MainWindow).HeroListView.SelectedIndex;
             return selectedIndex;
         }
 
@@ -37,7 +26,7 @@ namespace Lab3
                 return;
             }
 
-            Hero selectedHero = ((MainWindow) System.Windows.Application.Current.MainWindow).HeroList[GetItemIndex()];
+            Hero selectedHero = ((MainWindow) Application.Current.MainWindow).HeroList[GetItemIndex()];
             NameTextBox.Text = selectedHero.Name;
             HealthTextBox.Text = Convert.ToString(selectedHero.Health);
             MvmntSpdBox.Text = Convert.ToString(selectedHero.MovementSpeed);
@@ -62,25 +51,25 @@ namespace Lab3
                 return;
             }
 
-            ((MainWindow) System.Windows.Application.Current.MainWindow).HeroList[GetItemIndex()].Name =
+            ((MainWindow) Application.Current.MainWindow).HeroList[GetItemIndex()].Name =
                 NameTextBox.Text;
-            ((MainWindow)System.Windows.Application.Current.MainWindow).HeroList[GetItemIndex()].Health =
+            ((MainWindow)Application.Current.MainWindow).HeroList[GetItemIndex()].Health =
                 Convert.ToInt32(HealthTextBox.Text);
-            ((MainWindow)System.Windows.Application.Current.MainWindow).HeroList[GetItemIndex()].MovementSpeed =
+            ((MainWindow)Application.Current.MainWindow).HeroList[GetItemIndex()].MovementSpeed =
                 Convert.ToInt32(MvmntSpdBox.Text);
-            ((MainWindow)System.Windows.Application.Current.MainWindow).HeroList[GetItemIndex()].TurnRate =
+            ((MainWindow)Application.Current.MainWindow).HeroList[GetItemIndex()].TurnRate =
                 Convert.ToInt32(TurnRateBox.Text);
-            ((MainWindow)System.Windows.Application.Current.MainWindow).HeroList[GetItemIndex()].NightVision =
+            ((MainWindow)Application.Current.MainWindow).HeroList[GetItemIndex()].NightVision =
                 Convert.ToInt32(NightVisionBox.Text);
-            ((MainWindow)System.Windows.Application.Current.MainWindow).HeroList[GetItemIndex()].Armor =
+            ((MainWindow)Application.Current.MainWindow).HeroList[GetItemIndex()].Armor =
                 Convert.ToInt32(ArmorBox.Text);
-            ((MainWindow)System.Windows.Application.Current.MainWindow).HeroList[GetItemIndex()].MagicResistance =
+            ((MainWindow)Application.Current.MainWindow).HeroList[GetItemIndex()].MagicResistance =
                 Convert.ToInt32(ResistBox.Text);
-            ((MainWindow)System.Windows.Application.Current.MainWindow).HeroList[GetItemIndex()].AttackRange =
+            ((MainWindow)Application.Current.MainWindow).HeroList[GetItemIndex()].AttackRange =
                 Convert.ToInt32(RangeBox.Text);
-            ((MainWindow)System.Windows.Application.Current.MainWindow).HeroList[GetItemIndex()].BaseAttackTime =
+            ((MainWindow)Application.Current.MainWindow).HeroList[GetItemIndex()].BaseAttackTime =
                 Convert.ToInt32(AttackTimeBox.Text);
-            ((MainWindow)System.Windows.Application.Current.MainWindow).HeroList[GetItemIndex()].Damage =
+            ((MainWindow)Application.Current.MainWindow).HeroList[GetItemIndex()].Damage =
                 Convert.ToInt32(DamageBox.Text);
         }
     }
