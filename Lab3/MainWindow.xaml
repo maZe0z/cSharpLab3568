@@ -38,12 +38,12 @@
         <TextBox x:Name="HeroCharacteristics" HorizontalAlignment="Left" Height="276" Margin="396,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" IsReadOnly="True"/>
         <Label Content="Hero list:" HorizontalAlignment="Left" Margin="263,20,0,0" VerticalAlignment="Top" Height="26" Width="112" Foreground="White" FontFamily="Global Monospace" FontSize="14"/>
         <Label Content="Hero's characteristics:" HorizontalAlignment="Left" Margin="380,20,0,0" VerticalAlignment="Top" Width="204" Height="26" Foreground="White" FontFamily="Global Monospace" FontSize="14"/>
-        <Button Content="Show" HorizontalAlignment="Left" Margin="438,342,0,0" VerticalAlignment="Top" Width="72" Height="21" FontFamily="Global Monospace" FontSize="14" Click="Button_Click_1" RenderTransformOrigin="0.52,-1.619"/>
+        <Button Content="Show" HorizontalAlignment="Left" Margin="439,335,0,0" VerticalAlignment="Top" Width="72" Height="21" FontFamily="Global Monospace" FontSize="14" Click="Button_Click_1" RenderTransformOrigin="0.52,-1.619"/>
         <TextBox x:Name="AttackedHeroTextBox" HorizontalAlignment="Left" Height="23" Margin="681,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" RenderTransformOrigin="0.519,0.565"/>
         <TextBox x:Name="AttackingHeroTextBox" HorizontalAlignment="Left" Height="23" Margin="638,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26"/>
         <Button x:Name="AttackButton" Content="Attack!" HorizontalAlignment="Left" Margin="638,113,0,0" VerticalAlignment="Top" Width="69" FontFamily="Global Monospace" FontSize="14" Click="AttackButton_Click"/>
         <Label Content="Enter attacking and &#xD;&#xA;attacked hero indexes:" HorizontalAlignment="Left" Margin="584,33,0,0" VerticalAlignment="Top" Width="194" Height="44" Foreground="White" FontFamily="Global Monospace" FontSize="14"/>
-        <Button x:Name="EditModeButton" Content="Edit mode" HorizontalAlignment="Left" Margin="418,377,0,0" VerticalAlignment="Top" Width="116" FontFamily="Global Monospace" Click="EditModeButton_Click"/>
+        <Button x:Name="EditModeButton" Content="Edit mode" HorizontalAlignment="Left" Margin="421,361,0,0" VerticalAlignment="Top" Width="116" FontFamily="Global Monospace" Click="EditModeButton_Click"/>
         <RadioButton x:Name="RangedRadioButton" Content="Ranged" HorizontalAlignment="Left" Margin="10,344,0,0" VerticalAlignment="Top" Background="White" Foreground="White" FontFamily="Global Monospace" Width="71"/>
         <RadioButton x:Name="MeleeRadioButton" Content="Melee" HorizontalAlignment="Left" Margin="106,344,0,0" VerticalAlignment="Top" Background="White" Foreground="White" FontFamily="Global Monospace" RenderTransformOrigin="1.218,0.857" Width="66"/>
         <Image x:Name="ImageBox" HorizontalAlignment="Left" Height="141" Margin="795,36,0,0" VerticalAlignment="Top" Width="226"/>
@@ -58,5 +58,6 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
+        <Button x:Name="LevelUpButton" Content="Level up" HorizontalAlignment="Left" Margin="439,384,0,0" VerticalAlignment="Top" Width="75" FontFamily="Global Monospace" Click="LevelUpButton_Click"/>
     </Grid>
 </Window>

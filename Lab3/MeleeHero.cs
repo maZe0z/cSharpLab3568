@@ -28,6 +28,11 @@ namespace Lab3
             Damage = damage;
         }
 
+        public override void AddStats()
+        {
+            throw new NotImplementedException();
+        }
+
         public override void Attack(List<Hero> heroList, int attackerIndex, int attackedIndex)
         {
             if (heroList[attackedIndex].Health - heroList[attackerIndex].Damage < 0)

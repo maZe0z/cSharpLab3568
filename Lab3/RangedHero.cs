@@ -53,5 +53,10 @@ namespace Lab3
                 return;
             }
         }
+
+        public override void AddStats()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

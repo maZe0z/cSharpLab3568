@@ -196,5 +196,10 @@ namespace Lab3
             editWindow.Show();
             editWindow.ShowInitialCharacteristics();
         }
+
+        private void LevelUpButton_Click(object sender, RoutedEventArgs e)
+        {
+            HeroList[GetItemIndex()].AddStats();
+        }
     }
 }

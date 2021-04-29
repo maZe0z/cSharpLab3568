@@ -24,5 +24,11 @@ namespace Lab3
             Damage = 42;
             MovementSpeed = 305;
         }
+        public override void AddStats()
+        {
+            Health += 580;
+            Armor *= 3;
+            Damage *= 2;
+        }
     }
 }

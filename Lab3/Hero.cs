@@ -52,6 +52,8 @@ namespace Lab3
 
         private static string GenerateId() => Guid.NewGuid().ToString();
 
+        public abstract void AddStats();
+
         public abstract void Attack(List<Hero> heroList, int attackerIndex, int attackedIndex);
     }
 }
