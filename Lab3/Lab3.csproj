@@ -60,6 +60,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="MeleeHero.cs" />
+    <Compile Include="Pudge.cs" />
     <Compile Include="RangedHero.cs" />
     <Compile Include="ShadowFiend.cs" />
     <Page Include="EditWindow.xaml">

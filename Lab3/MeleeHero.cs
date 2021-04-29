@@ -10,6 +10,8 @@ namespace Lab3
     {
         public override string AttackType { get; set; } = "Melee";
 
+        public MeleeHero(){}
+
         public MeleeHero(string name, int health, int movementSpeed,
             double turnRate, int nightVision, double armor,
             int magicResistance, int attackRange, double baseAttackTime, int damage)

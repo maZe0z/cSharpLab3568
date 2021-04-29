@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Lab3"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Dota 3" Height="461.887" Width="1116.145" Icon="img.png" Background="Black">
+        Title="Dota 3" Height="460.887" Width="1056.145" Icon="img.png" Background="Black">
     <Grid x:Name="Grid" Margin="0,0,-6,-3">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -46,8 +46,17 @@
         <Button x:Name="EditModeButton" Content="Edit mode" HorizontalAlignment="Left" Margin="418,377,0,0" VerticalAlignment="Top" Width="116" FontFamily="Global Monospace" Click="EditModeButton_Click"/>
         <RadioButton x:Name="RangedRadioButton" Content="Ranged" HorizontalAlignment="Left" Margin="10,344,0,0" VerticalAlignment="Top" Background="White" Foreground="White" FontFamily="Global Monospace" Width="71"/>
         <RadioButton x:Name="MeleeRadioButton" Content="Melee" HorizontalAlignment="Left" Margin="106,344,0,0" VerticalAlignment="Top" Background="White" Foreground="White" FontFamily="Global Monospace" RenderTransformOrigin="1.218,0.857" Width="66"/>
-        <Image x:Name="ImageBox" HorizontalAlignment="Left" Height="141" Margin="842,33,0,0" VerticalAlignment="Top" Width="226"/>
-        <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="127" Margin="842,33,0,0" VerticalAlignment="Top" Width="226"/>
-        <Button x:Name="ImageButton" Content="Show Icon" HorizontalAlignment="Left" Margin="906,170,0,0" VerticalAlignment="Top" Width="93" Click="ImageButton_Click" FontFamily="Global Monospace"/>
+        <Image x:Name="ImageBox" HorizontalAlignment="Left" Height="141" Margin="795,36,0,0" VerticalAlignment="Top" Width="226"/>
+        <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="127" Margin="795,36,0,0" VerticalAlignment="Top" Width="226"/>
+        <Label Content="Hero image:" HorizontalAlignment="Left" Margin="863,13,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,0.538" Width="113" Foreground="White" FontFamily="Global Monospace">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-10.886"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-2.483"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
     </Grid>
 </Window>

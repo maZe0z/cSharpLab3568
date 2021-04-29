@@ -18,10 +18,16 @@ namespace Lab3
         {
             InitializeComponent();
             ShadowFiend shadowFiend = new ShadowFiend();
-            ListBoxItem menuItem = new ListBoxItem();
-            menuItem.Content = shadowFiend.Name;
+            ListBoxItem menuSFItem = new ListBoxItem();
+            menuSFItem.Content = shadowFiend.Name;
             HeroList.Add(shadowFiend);
-            HeroListView.Items.Add(menuItem);
+            HeroListView.Items.Add(menuSFItem);
+
+            Pudge pudge = new Pudge();
+            ListBoxItem menuPudgeItem = new ListBoxItem();
+            menuPudgeItem.Content = pudge.Name;
+            HeroList.Add(pudge);
+            HeroListView.Items.Add(menuPudgeItem);
 
         }
 
@@ -152,6 +158,7 @@ namespace Lab3
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             ShowCharacteristics();
+            ImageBox.Source = HeroList[GetItemIndex()].HeroIcon;
         }
 
         private void AttackButton_Click(object sender, RoutedEventArgs e)
@@ -188,11 +195,6 @@ namespace Lab3
             EditWindow editWindow = new EditWindow();
             editWindow.Show();
             editWindow.ShowInitialCharacteristics();
-        }
-
-        private void ImageButton_Click(object sender, RoutedEventArgs e)
-        {
-            ImageBox.Source = new BitmapImage(new Uri("https://static.wikia.nocookie.net/dota2_gamepedia/images/3/36/Shadow_Fiend_icon.png/revision/latest?cb=20160411213752"));
         }
     }
 }
