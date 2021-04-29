@@ -1,12 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Media.Imaging;
 
 namespace Lab3
 {
-    public class Hero
+    public abstract class Hero
     {
+        public BitmapImage HeroIcon { get; set; }
+
+        public void LoadImage(Bitmap image)
+        {
+            int x, y;
+
+            for (x = 0; x < image.Width; x++)
+            {
+                for (y = 0; y < image.Height; y++)
+                {
+                    Color pixelColor = image.GetPixel(x, y);
+                    Color newColor = Color.FromArgb(pixelColor.R, 0, 0);
+                    image.SetPixel(x, y, newColor);
+                }
+            }
+        }
+
+        public abstract string AttackType { get; set; }
+
         private static string GenerationId() => Guid.NewGuid().ToString();
+
         public string Name { get; set; }
+
         public int Health { get; set; }
 
         public int MovementSpeed { get; set; }
@@ -26,52 +49,9 @@ namespace Lab3
         public int Damage { get; set; }
 
         public string Id { get; }
-        
-        public Hero(string name, int health, int movementSpeed, 
-            double turnRate, int nightVision, double armor,
-            int magicResistance, int attackRange, double baseAttackTime, int damage)
-        {
-            Name = name;
-            Health = health;
-            MovementSpeed = movementSpeed;
-            TurnRate = turnRate;
-            NightVision = nightVision;
-            Armor = armor;
-            MagicResistance = magicResistance;
-            AttackRange = attackRange;
-            BaseAttackTime = baseAttackTime;
-            Damage = damage;
-            Id = GenerateId();
-        }
-
-        public Hero(string name, int health, int movementSpeed,
-            double turnRate, int nightVision, double armor,
-            int magicResistance, int attackRange, double baseAttackTime, int damage, string id)
-        {
-            Name = name;
-            Health = health;
-            MovementSpeed = movementSpeed;
-            TurnRate = turnRate;
-            NightVision = nightVision;
-            Armor = armor;
-            MagicResistance = magicResistance;
-            AttackRange = attackRange;
-            BaseAttackTime = baseAttackTime;
-            Damage = damage;
-            Id = id;
-        }
 
         private static string GenerateId() => Guid.NewGuid().ToString();
-        public void Attack(List<Hero> heroList, int attackerIndex, int attackedIndex)
-        {
-            if (heroList[attackedIndex].Health - heroList[attackerIndex].Damage < 0)
-            {
-                heroList[attackedIndex].Health = 0;
-            }
-            else
-            {
-                heroList[attackedIndex].Health = heroList[attackedIndex].Health - heroList[attackerIndex].Damage;
-            }
-        }
+
+        public abstract void Attack(List<Hero> heroList, int attackerIndex, int attackedIndex);
     }
 }

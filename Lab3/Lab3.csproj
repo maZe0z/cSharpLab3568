@@ -59,6 +59,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MeleeHero.cs" />
+    <Compile Include="RangedHero.cs" />
+    <Compile Include="ShadowFiend.cs" />
     <Page Include="EditWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -111,6 +114,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="sficon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

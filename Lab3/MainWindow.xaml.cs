@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace Lab3
 {
@@ -16,6 +17,12 @@ namespace Lab3
         public MainWindow()
         {
             InitializeComponent();
+            ShadowFiend shadowFiend = new ShadowFiend();
+            ListBoxItem menuItem = new ListBoxItem();
+            menuItem.Content = shadowFiend.Name;
+            HeroList.Add(shadowFiend);
+            HeroListView.Items.Add(menuItem);
+
         }
 
         public List<Hero> HeroList = new List<Hero>();
@@ -32,29 +39,60 @@ namespace Lab3
                 return;
             }
 
-            string name = Name.Text;
-            int health = Convert.ToInt32(Health.Text);
-            int movementSpeed = Convert.ToInt32(MovementSpeed.Text);
-            double turnRate = Convert.ToDouble(TurnRate.Text);
-            int nightVision = Convert.ToInt32(NightVision.Text);
-            double armor = Convert.ToDouble(Armor.Text);
-            int magicResistance = Convert.ToInt32(MagicResistance.Text);
-            int attackRange = Convert.ToInt32(AttackRange.Text);
-            double baseAttackTime = Convert.ToDouble(BaseAttackTime.Text);
-            int damage = Convert.ToInt32(Damage.Text);
+            if (RangedRadioButton.IsChecked == false && MeleeRadioButton.IsChecked == true)
+            {
+                string name = Name.Text;
+                int health = Convert.ToInt32(Health.Text);
+                int movementSpeed = Convert.ToInt32(MovementSpeed.Text);
+                double turnRate = Convert.ToDouble(TurnRate.Text);
+                int nightVision = Convert.ToInt32(NightVision.Text);
+                double armor = Convert.ToDouble(Armor.Text);
+                int magicResistance = Convert.ToInt32(MagicResistance.Text);
+                int attackRange = Convert.ToInt32(AttackRange.Text);
+                double baseAttackTime = Convert.ToDouble(BaseAttackTime.Text);
+                int damage = Convert.ToInt32(Damage.Text);
 
-            Hero hero = new Hero(name, health, movementSpeed, turnRate,
-                nightVision, armor, magicResistance,
-                attackRange, baseAttackTime, damage);
+                MeleeHero hero = new MeleeHero(name, health, movementSpeed, turnRate,
+                    nightVision, armor, magicResistance,
+                    attackRange, baseAttackTime, damage);
 
-            HeroList.Add(hero);
+                HeroList.Add(hero);
 
-            ListBoxItem menuItem = new ListBoxItem();
-            //menuItem.Selected += OnSelectedIndexChanged;
-            menuItem.Content = hero.Name;
+                ListBoxItem menuItem = new ListBoxItem();
+                //menuItem.Selected += OnSelectedIndexChanged;
+                menuItem.Content = hero.Name;
 
-            HeroListView.Items.Add(menuItem);
-            NotifyPropertyChanged();
+                HeroListView.Items.Add(menuItem);
+                NotifyPropertyChanged();
+            }
+
+            else if (RangedRadioButton.IsChecked == true && MeleeRadioButton.IsChecked == false)
+            {
+                string name = Name.Text;
+                int health = Convert.ToInt32(Health.Text);
+                int movementSpeed = Convert.ToInt32(MovementSpeed.Text);
+                double turnRate = Convert.ToDouble(TurnRate.Text);
+                int nightVision = Convert.ToInt32(NightVision.Text);
+                double armor = Convert.ToDouble(Armor.Text);
+                int magicResistance = Convert.ToInt32(MagicResistance.Text);
+                int attackRange = Convert.ToInt32(AttackRange.Text);
+                double baseAttackTime = Convert.ToDouble(BaseAttackTime.Text);
+                int damage = Convert.ToInt32(Damage.Text);
+
+                RangedHero hero = new RangedHero(name, health, movementSpeed, turnRate,
+                    nightVision, armor, magicResistance,
+                    attackRange, baseAttackTime, damage);
+
+                HeroList.Add(hero);
+
+                ListBoxItem menuItem = new ListBoxItem();
+                //menuItem.Selected += OnSelectedIndexChanged;
+                menuItem.Content = hero.Name;
+
+                HeroListView.Items.Add(menuItem);
+                NotifyPropertyChanged();
+            }
+
         }
 
         private int GetItemIndex()
@@ -79,7 +117,8 @@ namespace Lab3
                 "\nMagic resistance: " + HeroList[GetItemIndex()].MagicResistance +
                 "\nAttack range: " + HeroList[GetItemIndex()].AttackRange +
                 "\nBase attack time: " + HeroList[GetItemIndex()].BaseAttackTime +
-                "\nDamage: " + HeroList[GetItemIndex()].Damage;
+                "\nDamage: " + HeroList[GetItemIndex()].Damage + 
+                "\nAttack type: " + HeroList[GetItemIndex()].AttackType;
             NotifyPropertyChanged();
         }
 
@@ -133,12 +172,6 @@ namespace Lab3
                 return;
             }*/
 
-            for (int i = 0; i < 100; i++)
-            {
-                (sender as BackgroundWorker).ReportProgress(i);
-                Thread.Sleep(100);
-            }
-
             int attackerIndex = Convert.ToInt32(AttackingHeroTextBox.Text);
             int attackedIndex = Convert.ToInt32(AttackedHeroTextBox.Text);
 
@@ -155,6 +188,11 @@ namespace Lab3
             EditWindow editWindow = new EditWindow();
             editWindow.Show();
             editWindow.ShowInitialCharacteristics();
+        }
+
+        private void ImageButton_Click(object sender, RoutedEventArgs e)
+        {
+            ImageBox.Source = new BitmapImage(new Uri("https://static.wikia.nocookie.net/dota2_gamepedia/images/3/36/Shadow_Fiend_icon.png/revision/latest?cb=20160411213752"));
         }
     }
 }
