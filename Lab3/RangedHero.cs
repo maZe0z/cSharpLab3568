@@ -49,14 +49,17 @@ namespace Lab3
             }
             else
             {
-                MessageBox.Show("You missed!");
+                MessageBox.Show("Miss!", "Warning");
                 return;
             }
         }
 
+
         public override void AddStats()
         {
-            throw new NotImplementedException();
+            Health += 200;
+            Armor *= 2;
+            Damage *= 3;
         }
     }
 }

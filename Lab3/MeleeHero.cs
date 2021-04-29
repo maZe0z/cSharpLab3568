@@ -30,7 +30,9 @@ namespace Lab3
 
         public override void AddStats()
         {
-            throw new NotImplementedException();
+            Health += 300;
+            Armor *= 2;
+            Damage *= 2;
         }
 
         public override void Attack(List<Hero> heroList, int attackerIndex, int attackedIndex)
