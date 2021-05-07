@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sficon.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("flying_courier_dire_model.png")]
 
 

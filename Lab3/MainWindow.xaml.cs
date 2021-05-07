@@ -29,6 +29,7 @@ namespace Lab3
             HeroList.Add(pudge);
             HeroListView.Items.Add(menuPudgeItem);
 
+            ImageBox_Copy1.Source = new BitmapImage(new Uri("https://static.wikia.nocookie.net/dota2_gamepedia/images/5/56/Flying_Courier_Dire_model.png/revision/latest/scale-to-width-down/250?cb=20160315185440"));
         }
 
         public List<Hero> HeroList = new List<Hero>();
@@ -159,6 +160,7 @@ namespace Lab3
         {
             ShowCharacteristics();
             ImageBox.Source = HeroList[GetItemIndex()].HeroIcon;
+            ImageBox_Copy.Source = HeroList[GetItemIndex()].HeroIcon;
         }
 
         private void AttackButton_Click(object sender, RoutedEventArgs e)
@@ -201,5 +203,124 @@ namespace Lab3
         {
             HeroList[GetItemIndex()].AddStats();
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            if (String.IsNullOrEmpty(DistanceTextBox.Text))
+            {
+                return;
+            }
+
+            else if (EnableObst.IsChecked == true && DisableObst.IsChecked == true)
+            {
+                return;
+            }
+
+            else if (EnableObst.IsChecked == false && DisableObst.IsChecked == false)
+            {
+                return;
+            }
+
+            else if (EnableObst.IsChecked != DisableObst.IsChecked)
+            {
+                Courier tmpCourier = new Courier();
+
+                double tmpHeroTime = HeroList[GetItemIndex()].Move();
+                double tmpCourTime = tmpCourier.Move();
+
+                if (tmpCourTime > tmpHeroTime)
+                {
+                    RaceResultTextBox.Text = "Hero wins the race" +
+                        "\nCourier time: " + tmpCourTime +
+                        "\nHero time: " + tmpHeroTime;
+                }
+
+                else if (tmpCourTime < tmpHeroTime)
+                {
+                    RaceResultTextBox.Text = "Courier wins the race" +
+                        "\nCourier time: " + tmpCourTime +
+                        "\nHero time: " + tmpHeroTime;
+                }
+
+                else if (tmpCourTime == tmpHeroTime)
+                {
+                    RaceResultTextBox.Text = "That's a tie" +
+                            "\nCourier time: " + tmpCourTime +
+                            "\nHero time: " + tmpHeroTime;
+                }
+            }
+        }
+
+        private void SortButton_Click(object sender, RoutedEventArgs e)
+        {
+            HeroList.Sort();
+            HeroListView.Items.Clear();
+            
+            foreach (Hero hero in HeroList)
+            {
+                ListBoxItem menuItem = new ListBoxItem();
+                menuItem.Content = hero.Name;
+
+                HeroListView.Items.Add(menuItem);
+            }
+        }
+
+        /*else if (EnableObst.IsChecked == false && DisableObst.IsChecked == true)
+        {
+            Courier tmpCourier = new Courier();
+
+            double tmpHeroTime = HeroList[GetItemIndex()].Move();
+            double tmpCourTime = tmpCourier.Move();
+
+            if (tmpCourTime > tmpHeroTime)
+            {
+                RaceResultTextBox.Text = "Courier? wins the race" +
+                    "\nCourier time: " + tmpCourTime +
+                    "\nHero time: " + tmpHeroTime;
+            }
+
+            if (tmpCourTime < tmpHeroTime)
+            {
+                RaceResultTextBox.Text = "Hero! wins the race" +
+                    "\nCourier time: " + tmpCourTime +
+                    "\nHero time: " + tmpHeroTime;
+            }
+
+            else
+            {
+                RaceResultTextBox.Text = "That's a tie" +
+                        "\nCourier time: " + tmpCourTime +
+                        "\nHero time: " + tmpHeroTime;
+            }
+        }
+
+        else if (EnableObst.IsChecked == true && DisableObst.IsChecked == false)
+        {
+            Courier tmpCourier = new Courier();
+
+            double tmpHeroTime = HeroList[GetItemIndex()].Move();
+            double tmpCourTime = tmpCourier.Move();
+
+            if (tmpCourTime > tmpHeroTime)
+            {
+                RaceResultTextBox.Text = "Courier! wins the race" +
+                    "\nCourier time: " + tmpCourTime +
+                    "\nHero time: " + tmpHeroTime;
+            }
+
+            if (tmpCourTime < tmpHeroTime)
+            {
+                RaceResultTextBox.Text = "Hero? wins the race" +
+                    "\nCourier time: " + tmpCourTime +
+                    "\nHero time: " + tmpHeroTime;
+            }
+
+            else
+            {
+                RaceResultTextBox.Text = "That's a tie" +
+                        "\nCourier time: " + tmpCourTime +
+                        "\nHero time: " + tmpHeroTime;
+            }
+        }*/
     }
 }

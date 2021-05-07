@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Windows;
 using System.Windows.Media.Imaging;
 
 namespace Lab3
 {
-    public abstract class Hero
+    public abstract class Hero : IMovable, IComparable<Hero>
     {
         public BitmapImage HeroIcon { get; set; }
 
@@ -55,5 +56,34 @@ namespace Lab3
         public abstract void AddStats();
 
         public abstract void Attack(List<Hero> heroList, int attackerIndex, int attackedIndex);
+
+        public double Move()
+        {
+            double heroTime;
+
+            if (((MainWindow)Application.Current.MainWindow).EnableObst.IsChecked == true) {
+                heroTime = Convert.ToDouble(((MainWindow)Application.Current.MainWindow).DistanceTextBox.Text) / ((MainWindow)Application.Current.MainWindow).HeroList[
+                    ((MainWindow)Application.Current.MainWindow).HeroListView.SelectedIndex].MovementSpeed + 5;
+                return heroTime;
+            }
+
+            else if (((MainWindow)Application.Current.MainWindow).EnableObst.IsChecked == false)
+            {
+                heroTime = Convert.ToDouble(((MainWindow)Application.Current.MainWindow).DistanceTextBox.Text) / ((MainWindow)Application.Current.MainWindow).HeroList[
+                    ((MainWindow)Application.Current.MainWindow).HeroListView.SelectedIndex].MovementSpeed;
+                return heroTime;
+            }
+
+            else
+            {
+                heroTime = 0;
+                return heroTime;
+            }
+        }
+
+        public int CompareTo(Hero hero)
+        {
+            return MovementSpeed.CompareTo(hero.MovementSpeed);
+        }
     }
 }
