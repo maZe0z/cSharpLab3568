@@ -204,6 +204,33 @@ namespace Lab3
             HeroList[GetItemIndex()].AddStats();
         }
 
+        private void RaceMovables(IMovable first, IMovable second)
+        {
+            double tmpCourTime = second.Move();
+            double tmpHeroTime = first.Move();
+            
+
+            if (tmpCourTime > tmpHeroTime)
+            {
+                RaceResultTextBox.Text = "Hero wins the race" +
+                    "\nCourier time: " + tmpCourTime +
+                    "\nHero time: " + tmpHeroTime;
+            }
+
+            else if (tmpCourTime < tmpHeroTime)
+            {
+                RaceResultTextBox.Text = "Courier wins the race" +
+                    "\nCourier time: " + tmpCourTime +
+                    "\nHero time: " + tmpHeroTime;
+            }
+
+            else if (tmpCourTime == tmpHeroTime)
+            {
+                RaceResultTextBox.Text = "That's a tie" +
+                        "\nCourier time: " + tmpCourTime +
+                        "\nHero time: " + tmpHeroTime;
+            }
+        }
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             if (String.IsNullOrEmpty(DistanceTextBox.Text))
@@ -223,31 +250,10 @@ namespace Lab3
 
             else if (EnableObst.IsChecked != DisableObst.IsChecked)
             {
-                Courier tmpCourier = new Courier();
+                IMovable tmpHero = HeroList[GetItemIndex()];
+                IMovable courier = new Courier();
 
-                double tmpHeroTime = HeroList[GetItemIndex()].Move();
-                double tmpCourTime = tmpCourier.Move();
-
-                if (tmpCourTime > tmpHeroTime)
-                {
-                    RaceResultTextBox.Text = "Hero wins the race" +
-                        "\nCourier time: " + tmpCourTime +
-                        "\nHero time: " + tmpHeroTime;
-                }
-
-                else if (tmpCourTime < tmpHeroTime)
-                {
-                    RaceResultTextBox.Text = "Courier wins the race" +
-                        "\nCourier time: " + tmpCourTime +
-                        "\nHero time: " + tmpHeroTime;
-                }
-
-                else if (tmpCourTime == tmpHeroTime)
-                {
-                    RaceResultTextBox.Text = "That's a tie" +
-                            "\nCourier time: " + tmpCourTime +
-                            "\nHero time: " + tmpHeroTime;
-                }
+                RaceMovables(tmpHero, courier);
             }
         }
 
